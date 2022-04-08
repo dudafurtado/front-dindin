@@ -1,0 +1,55 @@
+.LogIn {
+    width: 100vw;
+
+    background-image: url(../../assets/wallpaper-photo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 46px 82px 130px;
+}
+
+.LogIn header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: var(--white-color);
+    font-size: 30px;
+    line-height: 43px;
+
+    margin-bottom: 160px;
+}
+
+.LogIn main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 92px;
+}
+
+.Presentation {
+    width: 600px;
+
+    color: var(--white-color);
+}
+
+.Title-Main-LogIn {
+    font-size: 52px;
+    line-height: 62px;
+
+    margin-bottom: 33px;
+}
+
+.Font-Purple {
+    color: var(--purple-color);
+}
+
+.Paragraphy {
+    font-size: 28px;
+    line-height: 33px;
+
+    margin-bottom: 54px;
+}

@@ -1,0 +1,54 @@
+.CardToLoginAndSignIn {
+    width: 513px;
+
+    background-color: var(--white-color);
+    padding: 60px 32px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Title-Card {
+    font-size: 28px;
+    line-height: 33px;
+    color: var(--purple-color);
+
+    margin-bottom: 48px;
+}
+
+.Div-Input-Card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin-bottom: 31px;
+}
+
+.Div-Input-Card label {
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.Input-Card {
+    all: unset;
+
+    width: 440px;
+    height: 63px;
+
+    border: 1px solid #555555;
+    border-radius: 5px;
+}
+
+.Button-Card {
+    height: 25px;
+    width: 345px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 84px;
+}
