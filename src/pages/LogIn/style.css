@@ -11,18 +11,6 @@
     padding: 46px 82px 130px;
 }
 
-.LogIn header {
-    display: flex;
-    align-items: center;
-    gap: 13px;
-
-    color: var(--white-color);
-    font-size: 30px;
-    line-height: 43px;
-
-    margin-bottom: 160px;
-}
-
 .LogIn main {
     display: flex;
     justify-content: center;

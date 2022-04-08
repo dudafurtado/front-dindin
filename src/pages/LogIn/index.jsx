@@ -1,6 +1,6 @@
 import './style.css';
-import ComingIn from '../../components/ComingIn'
-import IconLogo from '../../assets/icon-logo.svg'
+import CardComingIn from '../../components/CardComingIn'
+import HeaderComingIn from '../../components/HeaderComingIn'
 
 function LogIn() {
   const inputs = [
@@ -18,13 +18,7 @@ function LogIn() {
 
   return (
     <article className="LogIn Font-Rubik">
-      <header>
-        <img 
-        src={IconLogo} 
-        alt="Logo da empresa Dindin" 
-        />
-        <h2 className='Dindin Font-Seven'>Dindin</h2>
-      </header>
+      <HeaderComingIn />
       <main>
       <section className='Presentation'>
         <h1 className='Title-Main-LogIn Font-Seven'>Controle suas <span className='Font-Purple'>finanças</span>, sem planilha chata.
@@ -34,11 +28,7 @@ function LogIn() {
         </p>
         <button className='Font-Seven'>Cadastre-se</button>
       </section>
-      <ComingIn 
-      title='Login'
-      input={inputs}
-      button='Entrar'
-      />
+      <CardComingIn title='Login' input={inputs} button='Entrar' newOne='false' />
       </main>
     </article>
   );
