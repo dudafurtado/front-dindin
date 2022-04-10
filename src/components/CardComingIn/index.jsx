@@ -1,6 +1,6 @@
 import './style.css';
 
-function ComingIn({ title, input, button, newOne }) {
+function CardComingIn({ title, input, button, newOne }) {
   return (
     <section className='CardToLoginAndSignIn Font-Rubik'>
         <h3 className='Title-Card Font-Five'>{title}</h3>
@@ -18,4 +18,4 @@ function ComingIn({ title, input, button, newOne }) {
   );
 }
 
-export default ComingIn;
+export default CardComingIn;

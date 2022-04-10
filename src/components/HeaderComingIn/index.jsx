@@ -8,7 +8,7 @@ function HeaderCominIn() {
         src={IconLogo} 
         alt="Logo da empresa Dindin" 
         />
-        <h2 className='Dindin Font-Seven'>Dindin</h2>
+        <h2 className='Font-Seven Dindin'>Dindin</h2>
     </header>
   );
 }

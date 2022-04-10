@@ -1,9 +1,11 @@
 import './style.css';
+import HeaderHome from '../../components/HeaderHome'
 
 function Home() {
   return (
     <article className="Home">
-    <h1>Hello World</h1>
+      <HeaderHome userName='Duda' />
+      <main></main>
     </article>
   );
 }
