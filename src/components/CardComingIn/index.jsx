@@ -1,6 +1,6 @@
 import './style.css';
 
-function ComingIn({ title, input, button}) {
+function ComingIn({ title, input, button, newOne }) {
   return (
     <section className='CardToLoginAndSignIn Font-Rubik'>
         <h3 className='Title-Card Font-Five'>{title}</h3>
@@ -12,6 +12,7 @@ function ComingIn({ title, input, button}) {
             </div>
           ))}
           <button className='Button-Card Font-Seven'>{button}</button>
+          {newOne === 'true' ? <a className='JaCadastrou' href='/'>Já tem cadastro? Clique aqui!</a> : ''}
         </form>
       </section>
   );

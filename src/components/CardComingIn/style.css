@@ -35,7 +35,7 @@
 .Input-Card {
     all: unset;
 
-    width: 440px;
+    width: 435px;
     height: 63px;
 
     border: 1px solid #555555;
@@ -50,5 +50,17 @@
     justify-content: center;
     align-items: center;
 
-    margin-top: 84px;
+    margin-top: 53px;
+}
+
+.JaCadastrou {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    text-align: center;
+    color: var(--purple-color);
+
+    margin-top: 22px;
 }

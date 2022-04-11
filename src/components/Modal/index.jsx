@@ -1,11 +1,11 @@
 import './style.css';
 
-function EditRegister() {
+function Modal() {
   return (
-    <section className="EditRegister">
+    <section className="Modal">
     <h1>Hello World</h1>
     </section>
   );
 }
 
-export default EditRegister;
+export default Modal;
