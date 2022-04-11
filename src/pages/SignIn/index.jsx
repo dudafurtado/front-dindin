@@ -27,7 +27,7 @@ function SignIn() {
   ]
 
   return (
-    <article className="SignIn">
+    <article className="SignIn Font-Rubik">
       <HeaderComingIn />
       <main>
         <CardComingIn title='Cadastre-se' input={inputs} button='Cadastrar' newOne='true' />

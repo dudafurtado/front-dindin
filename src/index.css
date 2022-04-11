@@ -6,8 +6,20 @@
 
 body {
   --white-color: #FFFFFF;
-  --purple-color: #7978D9;
-  --gray-color: #484848;
+
+  --dark-gray-color: #484848;
+  --light-gray-color: #B9B9B9;
+
+  --light-black-color: #000000;
+  --dark-black-color: #2F2F2F;
+
+  --purple-money-color: #645FFB;
+  --orange-money-color: #FA8C10;
+  --blue-money-color: #3A9FF1;
+
+  --purple-button-color: #7978D9;
+  --gray-border-color: #555555; 
+  --white-background: #FAFAFA;
 }
 
 .Font-Rubik {
@@ -18,16 +30,16 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-.Font-Seven {
-  font-weight: 700;
+.Font-Four {
+  font-weight: 400;
 }
 
 .Font-Five {
   font-weight: 500;
 }
 
-.Font-Four {
-  font-weight: 400;
+.Font-Seven {
+  font-weight: 700;
 }
 
 button {
@@ -38,5 +50,11 @@ button {
   border-radius: 5px;
   background-color: var(--purple-color);
 
+  color: var(--white-color);
+}
+
+.Dindin {
+  font-size: 36px;
+  line-height: 43px;
   color: var(--white-color);
 }
