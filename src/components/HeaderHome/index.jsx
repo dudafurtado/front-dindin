@@ -11,9 +11,9 @@ function HeaderHome({ userName }) {
             <h2 className='Font-Seven Dindin'>Dindin</h2>
         </div>
         <div className='Right-HeaderHome'>
-            <img src={UserIcon} alt='Icone de um usuarios'/>
+            <img className='UserIcon' src={UserIcon} alt='Icone de um usuarios'/>
             <span className='Font-Seven User-Name'>{userName}</span>
-            <img src={GoOutIcon} alt='Icone porta de saída do Menu'/>
+            <img className='GoOutIcon' src={GoOutIcon} alt='Icone porta de saída do Menu'/>
         </div>
     </header>
   );

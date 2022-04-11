@@ -38,7 +38,7 @@
     width: 435px;
     height: 63px;
 
-    border: 1px solid #555555;
+    border: 1px solid var(--border-gray-color);
     border-radius: 5px;
 }
 

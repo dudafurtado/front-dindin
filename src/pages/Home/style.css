@@ -1,0 +1,10 @@
+.Dashboard-Home {
+    width: 100vw;
+    
+    position: absolute;
+    top: 118px;
+
+    padding: 55px 82px 300px;
+    background-color: var(--white-color);
+    border-radius: 60px 60px 0px 0px;
+}
