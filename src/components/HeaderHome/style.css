@@ -1,0 +1,39 @@
+.HeaderHome {
+    width: 100vw;
+    height: 224px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 46px 82px 0px;
+    background: linear-gradient(90.23deg, #05EDE3 0.02%, #645FFB 99.63%);
+}
+
+.User-Name {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.Left-HeaderHome {
+    display: flex;
+    gap: 9px;
+}
+
+.Right-HeaderHome {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    color: var(--white-color);
+}
+
+.UserIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.GoOutIcon {
+    width: 22px;
+    height: 28px;
+}

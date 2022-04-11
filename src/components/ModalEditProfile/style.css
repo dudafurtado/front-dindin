@@ -1,0 +1,34 @@
+.ModalEditProfile {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(61, 61, 61, 0.48);
+}
+
+.EditProfile {
+    width: 540px;
+    height: 530px;
+
+    padding: 56px 64px;
+    background-color: var(--white-color);
+    border-radius: 20px;
+}
+
+.Modal-Top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Modal-Title {
+    font-size: 36px;
+    line-height: 43px;
+}
