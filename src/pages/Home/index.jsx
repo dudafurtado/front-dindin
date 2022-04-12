@@ -6,13 +6,15 @@ import ResumeOfSpends from '../../components/ResumeOfSpends';
 import AllTheTransactions from '../../components/AllTheTransactions';
 
 // import ModalEditProfile from '../../components/ModalEditProfile';
-// import ModalRegister from '../../components/ModalRegister';
+import ModalRegister from '../../components/ModalRegister';
 
 function Home() {
   return (
     <article className="Home">
+      
       {/* <ModalEditProfile /> */}
-      {/* <ModalRegister /> */}
+      <ModalRegister />
+      {/*  */}
       <HeaderHome userName='Duda' />
       <main className='Dashboard-Home'>
         <section className='First-Section-Home'>
