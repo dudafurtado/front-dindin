@@ -35,11 +35,11 @@ function ModalEditProfile() {
       <form action="">
         {inputs.map((eachInput) => (
           <div className='Input-Container' key={eachInput.id}>
-            <label className='Modal-Label' htmlFor="">{eachInput.label}</label>
+            <label className='Modal-Label Font-Five' htmlFor="">{eachInput.label}</label>
             <input type={eachInput.type} />
           </div>
         ))}
-        <button>Confirmar</button>
+        <button className='Button-Modal Button-Purple-Submit'>Confirmar</button>
       </form>
       </section>
     </article>
