@@ -2,25 +2,24 @@ import './style.css';
 
 import HeaderHome from '../../components/HeaderHome';
 import FilterByCategory from '../../components/FilterByCategory';
-import SpendsDetails from '../../components/SpendsDetails';
 import ResumeOfSpends from '../../components/ResumeOfSpends';
+import AllTheTransactions from '../../components/AllTheTransactions';
 
-import ModalEditProfile from '../../components/ModalEditProfile';
-import ModalRegister from '../../components/ModalRegister';
+// import ModalEditProfile from '../../components/ModalEditProfile';
+// import ModalRegister from '../../components/ModalRegister';
 
 function Home() {
   return (
     <article className="Home">
-      <ModalEditProfile />
-      
+      {/* <ModalEditProfile /> */}
       {/* <ModalRegister /> */}
       <HeaderHome userName='Duda' />
       <main className='Dashboard-Home'>
-        <section>
+        <section className='First-Section-Home'>
           <FilterByCategory />
-          <SpendsDetails />
+          <ResumeOfSpends />
         </section>
-        <ResumeOfSpends />
+        <AllTheTransactions />
       </main>
     </article>
   );

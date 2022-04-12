@@ -45,12 +45,32 @@ body {
 button {
   all: unset;
   cursor: pointer;
+}
 
+.Button-Purple-Submit {
   padding: 11px 47px 14px;
   border-radius: 5px;
-  background-color: var(--purple-color);
+  background-color: var(--purple-button-color);
 
   color: var(--white-color);
+}
+
+.Button-Purple-Filter {
+  padding: 8px 11px;
+  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: var(--purple-button-color);
+
+  color: var(--white-color);
+}
+
+.Button-White-Filter {
+  padding: 8px 11px;
+  box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: var(--white-color);
+
+  color: var(--light-black-color);
 }
 
 .Dindin {

@@ -1,0 +1,68 @@
+.SpendDetails {
+    position: relative;
+    top: 55px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.SpendDetails-Container {
+    width: 225px;
+    height: 220px;
+
+    padding: 26px 33px 19px;
+    background: var(--white-background);
+    box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.ResumeTitle {
+    font-size: 18px;
+    line-height: 21px;
+
+    margin-bottom: 23px;
+}
+
+.Resume {
+    font-size: 13px;
+    line-height: 15px;
+    border-bottom: 1px solid #EAEAEA;
+
+    margin-bottom: 16px;
+}
+
+.Resume-TopOne, .Resume-TopTwo, .Resume-Bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 12px;
+}
+
+.Resume-Bottom {
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.Dark-Black {
+    color: var(--dark-black-color);
+}
+
+.MoneyEntrance {
+    color: var(--purple-money-color);
+}
+
+.MoneyExit {
+    color: var(--orange-money-color);
+}
+
+.MoneyTotal {
+    color: var(--blue-money-color);
+}
+
+.SpendDetails button {
+    font-size: 14px;
+    line-height: 17px;
+
+    margin-top: 16px;
+}

@@ -50,15 +50,17 @@ function FilterByCategory() {
         </div>
         <section className='Categories'>
                 <span className='CategoryTitle Font-Rubik Font-Five'>Categoria</span>
+                <section>
                 {allCategories.map((eachCategory) => (
                     <div className='CategoryName CategoryContainer Font-Rubik Font-Four' key={eachCategory.id}>
                         <span>{eachCategory.name}</span>
                         <span>+</span>
                     </div>
                 ))}
+                </section>
                 <div className='Buttons-Category Font-Lato Font-Seven'>
-                    <button className='CleanFilters'>Limpar Filtros</button>
-                    <button>Aplicar Filtros</button>
+                    <button className='CleanFilters Button-White-Filter'>Limpar Filtros</button>
+                    <button className='Button-Purple-Filter'>Aplicar Filtros</button>
                 </div>
         </section>
     </section>
