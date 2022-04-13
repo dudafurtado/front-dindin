@@ -4,7 +4,7 @@
     position: absolute;
     top: 118px;
 
-    padding: 55px 82px 300px;
+    padding: 55px 82px 0px 82pxz;
     background-color: var(--white-color);
     border-radius: 60px 60px 0px 0px;
 }

@@ -14,13 +14,16 @@ function ProtectedRoutes ({ redirectTo }) {
 function MainRoutes() {
     return (
         <Routes>
-            <Route path={['/', '/login']} element={<LogIn />} />
-            <Route path='/cadastrar' element={<SignIn />} />
-            <Route element={<ProtectedRoutes redirectTo='/cadastrar' />}>
-                <Route 
-                path={['/home', '/usuario', '/categoria', '/transacao/extrato', '/transacao', '/transacao/:id']} 
-                element={<Home />} />
-            </Route>
+          <Route element={<LogIn />}>
+            <Route path='/' element={<LogIn />} />
+            <Route path='/login' element={<LogIn />} />
+          </Route>
+
+          <Route path='/cadastrar' element={<SignIn />} />
+
+          <Route element={<ProtectedRoutes redirectTo='/login' />}>
+            <Route path='/home' element={<Home />} />
+          </Route>
         </Routes>
     );
 }
