@@ -26,7 +26,7 @@ function LogIn() {
         <p className='Paragraphy Font-Four '>
         Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um clique de distância.
         </p>
-        <button className='Font-Seven'>Cadastre-se</button>
+        <button className='Button-Purple-Submit Font-Seven'>Cadastre-se</button>
       </section>
       <CardComingIn title='Login' input={inputs} button='Entrar' newOne='false' />
       </main>

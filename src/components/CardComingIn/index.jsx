@@ -11,7 +11,7 @@ function CardComingIn({ title, input, button, newOne }) {
               <input className='Input-Card' id={eachInput.labelAndID} type={eachInput.type} />
             </div>
           ))}
-          <button className='Button-Card Font-Seven'>{button}</button>
+          <button className='Button-Card Button-Purple-Submit Font-Seven'>{button}</button>
           {newOne === 'true' ? <a className='JaCadastrou' href='/'>Já tem cadastro? Clique aqui!</a> : ''}
         </form>
       </section>
