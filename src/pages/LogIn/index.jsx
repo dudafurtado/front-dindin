@@ -2,19 +2,29 @@ import './style.css';
 import CardComingIn from '../../components/CardComingIn'
 import HeaderComingIn from '../../components/HeaderComingIn'
 
+import { useNavigate } from 'react-router-dom'
+
 function LogIn() {
+  const navigate = useNavigate();
+
   const inputs = [
     {
       id: 1,
-      labelAndID: 'E-mail',
-      type: 'text'
+      label: 'E-mail',
+      type: 'text',
+      value: 'email'
     },
     {
       id: 2,
-      labelAndID: 'Senha',
-      type: 'password'
+      label: 'Senha',
+      type: 'password',
+      value: 'senha'
     }
   ]
+
+  function handleToSignUp() {
+    navigate('/cadastrar')
+  }
 
   return (
     <article className="LogIn Font-Rubik">
@@ -26,9 +36,14 @@ function LogIn() {
         <p className='Paragraphy Font-Four '>
         Organizar as suas finanças nunca foi tão fácil, com o DINDIN, você tem tudo num único lugar e em um clique de distância.
         </p>
-        <button className='Button-Purple-Submit Font-Seven'>Cadastre-se</button>
+        <button 
+        className='Button-Purple-Submit Font-Seven'
+        onClick={() => handleToSignUp()}
+        >
+          Cadastre-se
+        </button>
       </section>
-      <CardComingIn title='Login' input={inputs} button='Entrar' newOne='false' />
+      <CardComingIn title='Login' input={inputs} button='Entrar' isSignUp={false} />
       </main>
     </article>
   );
