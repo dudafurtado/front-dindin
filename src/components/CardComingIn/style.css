@@ -14,7 +14,7 @@
 .Title-Card {
     font-size: 28px;
     line-height: 33px;
-    color: var(--purple-color);
+    color: var(--purple-button-color);
 
     margin-bottom: 48px;
 }
@@ -44,7 +44,7 @@
 
 .Button-Card {
     height: 25px;
-    width: 100%;
+    width: 346px;
 
     display: flex;
     justify-content: center;
@@ -54,13 +54,15 @@
 }
 
 .JaCadastrou {
+    cursor: pointer;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 
     text-decoration: none;
     text-align: center;
-    color: var(--purple-color);
+    color: #7B61FF;
 
-    margin-top: 22px;
+    margin-top: 8px;
 }

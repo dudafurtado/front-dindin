@@ -1,5 +1,5 @@
 import Home from '../src/pages/Home';
-import SignIn from '../src/pages/SignIn';
+import SignUp from '../src/pages/SignUp';
 import LogIn from '../src/pages/LogIn';
 
 import { getItem } from './utils/storage'
@@ -19,7 +19,7 @@ function MainRoutes() {
             <Route path='/login' element={<LogIn />} />
           </Route>
 
-          <Route path='/cadastrar' element={<SignIn />} />
+          <Route path='/cadastrar' element={<SignUp />} />
 
           <Route element={<ProtectedRoutes redirectTo='/login' />}>
             <Route path='/home' element={<Home />} />
