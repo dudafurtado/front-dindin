@@ -54,6 +54,7 @@ function CardComingIn({ title, input, button, isSignUp }) {
       const { token, usuarios } = response.data;
       setItem('token', token);
       setItem('userID', usuarios.id);
+      setItem('userName', usuarios.nome)
 
       navigate('/home');
 

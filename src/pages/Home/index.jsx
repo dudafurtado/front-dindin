@@ -5,17 +5,10 @@ import FilterByCategory from '../../components/FilterByCategory';
 import ResumeOfSpends from '../../components/ResumeOfSpends';
 import AllTheTransactions from '../../components/AllTheTransactions';
 
-// import ModalEditProfile from '../../components/ModalEditProfile';
-import ModalRegister from '../../components/ModalRegister';
-
 function Home() {
   return (
     <article className="Home">
-      
-      {/* <ModalEditProfile /> */}
-      <ModalRegister />
-      {/*  */}
-      <HeaderHome userName='Duda' />
+      <HeaderHome />
       <main className='Dashboard-Home'>
         <section className='First-Section-Home'>
           <FilterByCategory />

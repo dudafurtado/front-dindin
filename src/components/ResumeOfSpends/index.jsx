@@ -1,8 +1,17 @@
 import './style.css';
+import { useState } from 'react'
+import ModalRegister from '../../components/ModalRegister';
 
 function SpendDetails() {
+    const [isOpenModal, setIsOpenModal] = useState(false);
+
+    function handleOpenRegister () {
+        setIsOpenModal(true);
+    }
+
   return (
     <article className='SpendDetails Font-Rubik'>
+        {isOpenModal === true ? <ModalRegister read={isOpenModal} manipulate={setIsOpenModal} /> : ''}
         <section className='SpendDetails-Container'>
             <h4 className='ResumeTitle Dark-Black Font-Seven'>Resumo</h4>
             <div className='Resume Font-Five'>
@@ -20,7 +29,7 @@ function SpendDetails() {
                 <span className='MoneyTotal'>R$ 129,50</span>
             </div>
         </section>
-        <button className='Button-Purple-Submit Font-Seven'>Adicionar Registro</button>
+        <button onClick={() => handleOpenRegister()} className='Button-Purple-Submit Font-Seven'>Adicionar Registro</button>
     </article>
   );
 }
