@@ -1,10 +1,14 @@
+.Home {
+    width: 100%;
+}
+
 .Dashboard-Home {
-    width: 100vw;
+    width: 100%;
     
     position: absolute;
     top: 118px;
 
-    padding: 55px 82px 0px 82pxz;
+    padding: 55px 82px 100px 82px;
     background-color: var(--white-color);
     border-radius: 60px 60px 0px 0px;
 }

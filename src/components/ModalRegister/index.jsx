@@ -1,7 +1,7 @@
 import './style.css';
 import CloseIcon from '../../assets/icon-close.svg'
 
-function ModalRegister() {
+function ModalRegister({ read, manipulate }) {
   const inputs =[
     {
       id: 1,
@@ -24,6 +24,13 @@ function ModalRegister() {
       type: 'text'
     },
   ]
+
+  function handleCloseModal () {
+    if (read === true) {
+      manipulate(false)
+    }
+  }
+
   return (
     <article className="ModalEditProfile Font-Rubik">
       <section className="EditProfile">
