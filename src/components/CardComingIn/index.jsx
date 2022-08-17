@@ -66,7 +66,6 @@ function CardComingIn({ title, input, button, isSignUp }) {
   }
 
   async function handleSignUp () {
-    console.log('entrou na função de sign up')
     try {
       await api.post('/cadastrar', {
         ...signUp
