@@ -2,7 +2,7 @@
     width: 513px;
 
     background-color: var(--white-color);
-    padding: 60px 32px;
+    padding: 58px 32px;
     border-radius: 20px;
 
     display: flex;
@@ -16,7 +16,7 @@
     line-height: 33px;
     color: var(--purple-button-color);
 
-    margin-bottom: 48px;
+    margin-bottom: 42px;
 }
 
 .Div-Input-Card {
@@ -35,11 +35,13 @@
 .Input-Card {
     all: unset;
 
-    width: 435px;
-    height: 63px;
+    width: 402px;
+    height: 60px;
 
     border: 1px solid var(--gray-border-color);
     border-radius: 5px;
+
+    padding: 0 16px;
 }
 
 .Button-Card {
@@ -64,5 +66,5 @@
     text-align: center;
     color: #7B61FF;
 
-    margin-top: 8px;
+    margin-top: 14px;
 }

@@ -7,5 +7,3 @@ export default axios.create({
         'Content-Type' : 'application/json'
     }
 });
-
-// http://localhost:8000
