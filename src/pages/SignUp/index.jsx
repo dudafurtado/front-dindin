@@ -1,6 +1,6 @@
 import './style.css';
-import HeaderComingIn from '../../components/HeaderComingIn'
-import CardComingIn from '../../components/CardComingIn'
+import HeaderComingIn from '../../components/HeaderComingIn';
+import CardComingIn from '../../components/CardComingIn';
 
 function SignUp() {
   const inputs = [
@@ -8,7 +8,7 @@ function SignUp() {
       id: 1,
       label: 'Nome',
       type: 'text',
-      value: 'nome'
+      value: 'name'
     },
     {
       id: 2,
@@ -20,13 +20,13 @@ function SignUp() {
       id: 3,
       label: 'Senha',
       type: 'password',
-      value: 'senha'
+      value: 'password'
     },
     {
       id: 4,
       label: 'Confirmação de Senha',
       type: 'password',
-      value: 'senha'
+      value: 'password'
     }
   ]
 

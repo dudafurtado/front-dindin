@@ -1,6 +1,6 @@
 import './style.css';
-import CardComingIn from '../../components/CardComingIn'
-import HeaderComingIn from '../../components/HeaderComingIn'
+import CardComingIn from '../../components/CardComingIn';
+import HeaderComingIn from '../../components/HeaderComingIn';
 
 import { useNavigate } from 'react-router-dom'
 
@@ -18,13 +18,9 @@ function LogIn() {
       id: 2,
       label: 'Senha',
       type: 'password',
-      value: 'senha'
+      value: 'password'
     }
   ]
-
-  function handleToSignUp() {
-    navigate('/cadastrar')
-  }
 
   return (
     <article className="LogIn Font-Rubik">
@@ -38,7 +34,7 @@ function LogIn() {
         </p>
         <button 
         className='Button-Purple-Submit Font-Seven'
-        onClick={() => handleToSignUp()}
+        onClick={() => navigate('/cadastrar')}
         >
           Cadastre-se
         </button>

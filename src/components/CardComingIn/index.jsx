@@ -4,19 +4,20 @@ import { setItem } from '../../utils/storage';
 
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function CardComingIn({ title, input, button, isSignUp }) {
   const navigate = useNavigate();
 
   const [signUp, setSignUp] = useState({
-    nome: '',
+    name: '',
     email: '',
-    senha: ''
+    password: ''
   });
 
   const [login, setLogin] = useState({
     email: '',
-    senha: ''
+    password: ''
   });
 
   function handleChangeInputValue (addedValue, event) {
@@ -30,15 +31,20 @@ function CardComingIn({ title, input, button, isSignUp }) {
   }
 
   async function handleSubmit (e) {
+    console.log('entrei no submit')
     e.preventDefault();
+    console.log(signUp)
+    console.log(login)
 
     if (isSignUp === true) {
-      if (!signUp.nome || !signUp.email || !signUp.senha) {
+      console.log('sign up')
+      if (!signUp.name || !signUp.email || !signUp.password) {
+        console.log('faltando campo do sign up')
         return;
       }
       handleSignUp();
     } else {
-      if (!login.email || !login.senha) {
+      if (!login.email || !login.password) {
         return;
       }
       handleLogin();
@@ -46,6 +52,7 @@ function CardComingIn({ title, input, button, isSignUp }) {
   }
 
   async function handleLogin () {
+    console.log('entrei no login')
     try {
       const response = await api.post('/login', {
         ...login
@@ -54,49 +61,47 @@ function CardComingIn({ title, input, button, isSignUp }) {
       const { token, usuarios } = response.data;
       setItem('token', token);
       setItem('userID', usuarios.id);
-      setItem('userName', usuarios.nome)
+      setItem('userName', usuarios.name);
 
+      toast.success('Login realizado com sucesso. Vamos para o seu dashboard?');
       navigate('/home');
 
       handleClearForm()
     } catch (error) {
-      console.log(error.message);
-      console.log(error.response.data.message);
+      toast.error(error.message);
     }
   }
 
   async function handleSignUp () {
+    console.log('entrei no cadastrar')
     try {
-      await api.post('/cadastrar', {
+      await api.post('/user', {
         ...signUp
       })
 
+      toast.success('Vamos para o login confirmar sua conta. É para sua segurança, ok?');
       navigate('/login');
 
-      handleClearForm()
+      handleClearForm();
     } catch (error) {
-      console.log(error.message);
-      console.log(error.response.data.message);
+      toast.error(error.message);
     }
   }
 
   function handleClearForm () {
+    console.log('limpar o form')
      if (isSignUp === true) {
       setSignUp({
-        nome: '',
+        name: '',
         email: '',
-        senha: ''
+        password: ''
       })
     } else {
       setLogin({
         email: '',
-        senha: ''
+        password: ''
       })
     }
-  }
-
-  function handleToLogin() {
-    navigate('/login')
   }
 
   return (
@@ -114,8 +119,9 @@ function CardComingIn({ title, input, button, isSignUp }) {
               />
             </div>
           ))}
-          <button className='Button-Card Button-Purple-Submit Font-Seven'>{button}</button>
-          {isSignUp === true ? <span onClick={() => handleToLogin()} className='JaCadastrou'>Já tem cadastro? Clique aqui!</span> : ''}
+          <button className='Button-Card Button-Purple-Submit Font-Seven'>{button}
+          </button>
+          {isSignUp === true ? <span onClick={() => navigate('/login')} className='JaCadastrou'>Já tem cadastro? Clique aqui!</span> : ''}
         </form>
       </section>
   );
