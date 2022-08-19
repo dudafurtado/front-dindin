@@ -1,7 +1,7 @@
 import './style.css';
 import CloseIcon from '../../assets/icon-close.svg'
 
-function ModalRegister({ read, manipulate }) {
+function ModalRegister({ setIsOpenModal }) {
   const inputs =[
     {
       id: 1,
@@ -14,29 +14,23 @@ function ModalRegister({ read, manipulate }) {
       type: 'selected'
     },
     {
-      id: 1,
+      id: 3,
       label: 'Data',
       type: 'text'
     },
     {
-      id: 1,
+      id: 4,
       label: 'Descrição',
       type: 'text'
     },
   ]
-
-  function handleCloseModal () {
-    if (read === true) {
-      manipulate(false)
-    }
-  }
 
   return (
     <article className="ModalEditProfile Font-Rubik">
       <section className="EditProfile">
         <div className='Modal-Top'>
           <h1 className='Modal-Title Font-Seven'>Adicionar Register</h1>
-          <img src={CloseIcon} alt="Icone para fechar o modal" />
+          <img onClick={() => setIsOpenModal(false)} src={CloseIcon} className='CloseIcon' alt="Icone para fechar o modal" />
         </div>
         <section className='Type'>
         <span className='Entrance Button-Purple-Submit'>Entrada</span>

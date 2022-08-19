@@ -35,6 +35,10 @@
     line-height: 32px;
 }
 
+.CloseIcon {
+    cursor: pointer;
+}
+
 .Type {
     display: flex;
 }

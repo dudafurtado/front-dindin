@@ -18,21 +18,20 @@ createRoot(document.getElementById('root')).render(
       className: '',
       duration: 8000,
       style: {
-        background: 'var(--purple-button-color)',
         color: 'var(--white-color)',
       },
       icon: '👏',
       success: {
         duration: 3000,
         style: {
-          background: 'var(--blue-money-color)'
+          background: 'var(--purple-button-color)'
         },
         icon: '🔥',
       },
       error: {
         duration: 3000,
         style: {
-          background: 'var(--red-exit-color)'
+          background: 'var(--orange-money-color)'
         },
         icon: '⛔',
       }

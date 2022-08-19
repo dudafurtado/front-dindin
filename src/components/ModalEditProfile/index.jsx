@@ -1,17 +1,19 @@
 import './style.css';
-import CloseIcon from '../../assets/icon-close.svg'
+import CloseIcon from '../../assets/icon-close.svg';
 
 import { useState } from 'react';
+import toast from 'react-hot-toast';
+
 import api from '../../services/api';
 import { getItem } from '../../utils/storage';
 
-function ModalEditProfile({ read, manipulate }) {
+function ModalEditProfile({ setIsOpenModal }) {
   const inputs =[
     {
       id: 1,
       label: 'Nome',
       type: 'text',
-      value: 'nome'
+      value: 'name'
     },
     {
       id: 2,
@@ -23,26 +25,20 @@ function ModalEditProfile({ read, manipulate }) {
       id: 3,
       label: 'Senha',
       type: 'password',
-      value: 'senha'
+      value: 'password'
     },
     {
       id: 4,
       label: 'Confirmação de senha',
       type: 'password',
-      value: 'senha'
+      value: 'password'
     },
   ]
 
-  function handleCloseModal () {
-    if (read === true) {
-      manipulate(false)
-    }
-  }
-
   const [editProfile, setEditProfile] = useState({
-    nome: '',
+    name: '',
     email: '',
-    senha: ''
+    password: ''
   });
 
   function handleChangeInputValue (addedValue, event) {
@@ -53,17 +49,17 @@ function ModalEditProfile({ read, manipulate }) {
   async function handleSubmit (e) {
     e.preventDefault();
 
-    if (!editProfile.nome || !editProfile.email || !editProfile.senha) {
-      return;
+    if (!editProfile.name || !editProfile.email || !editProfile.password) {
+      return toast.error('Todos os campos são obrigatórios');
     }
+    
     handleUpdateUser();
   }
 
   async function handleUpdateUser() {
-    const token = getItem('token')
-    const userID = getItem('userID')
+    const token = getItem('token');
     try {
-      await api.put(`/transaction/${userID}`, {
+      await api.put('/user', {
         ...editProfile
       },
       {
@@ -72,17 +68,19 @@ function ModalEditProfile({ read, manipulate }) {
         }
       });
 
+      toast.success('Seu perfil foi atualizado com sucesso');
+
       handleClearForm();
     } catch (error) {
-      console.log(error.message);
+      toast.error(error.response.data);
     }
   }
 
   function handleClearForm () {
     setEditProfile({
-      nome: '',
+      name: '',
       email: '',
-      senha: ''
+      password: ''
     });
  }
 
@@ -91,7 +89,7 @@ function ModalEditProfile({ read, manipulate }) {
       <section className="EditProfile">
         <div className='Modal-Top'>
           <h1 className='Modal-Title Font-Seven'>Editar Perfil</h1>
-          <img onclick={() => handleCloseModal()} src={CloseIcon} alt="Icone para fechar o modal" />
+          <img onClick={() => setIsOpenModal(false)} src={CloseIcon}className='CloseIcon' alt="Icone para fechar o modal" />
         </div>
       <form onSubmit={handleSubmit}>
         {inputs.map((eachInput) => (

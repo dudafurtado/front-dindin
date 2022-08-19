@@ -31,60 +31,57 @@ function CardComingIn({ title, input, button, isSignUp }) {
   }
 
   async function handleSubmit (e) {
-    console.log('entrei no submit')
     e.preventDefault();
-    console.log(signUp)
-    console.log(login)
 
     if (isSignUp === true) {
-      console.log('sign up')
       if (!signUp.name || !signUp.email || !signUp.password) {
-        console.log('faltando campo do sign up')
-        return;
+        return toast.error("Todos os campos são obrigatórios");
       }
       handleSignUp();
     } else {
       if (!login.email || !login.password) {
-        return;
+        return toast.error("Todos os campos são obrigatórios");
       }
       handleLogin();
     }
   }
 
   async function handleLogin () {
-    console.log('entrei no login')
+    console.log(login)
     try {
       const response = await api.post('/login', {
         ...login
       });
 
-      const { token, usuarios } = response.data;
+      if (response.status > 204) return toast.error(response.data);
+
+      const { token, user } = response.data;
       setItem('token', token);
-      setItem('userID', usuarios.id);
-      setItem('userName', usuarios.name);
+      setItem('userName', user.name);
 
       toast.success('Login realizado com sucesso. Vamos para o seu dashboard?');
       navigate('/home');
 
-      handleClearForm()
+      handleClearForm();
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.response.data);
     }
   }
 
   async function handleSignUp () {
-    console.log('entrei no cadastrar')
     try {
-      await api.post('/user', {
+      const response = await api.post('/user', {
         ...signUp
       })
+      console.log(response);
+      if (response.status > 204) return toast.error(response.data);
 
       toast.success('Vamos para o login confirmar sua conta. É para sua segurança, ok?');
       navigate('/login');
 
       handleClearForm();
     } catch (error) {
-      toast.error(error.message);
+      toast.error(error.response.data);
     }
   }
 
