@@ -26,10 +26,10 @@ function ModalRegister({ setIsOpenModal }) {
   ]
 
   return (
-    <article className="ModalEditProfile Font-Rubik">
-      <section className="EditProfile">
-        <div className='Modal-Top'>
-          <h1 className='Modal-Title Font-Seven'>Adicionar Register</h1>
+    <article className="ModalRegister Font-Rubik">
+      <section className="Register">
+        <div className='Register-Top'>
+          <h1 className='Register-Title Font-Seven'>Adicionar Register</h1>
           <img onClick={() => setIsOpenModal(false)} src={CloseIcon} className='CloseIcon' alt="Icone para fechar o modal" />
         </div>
         <section className='Type'>
@@ -38,12 +38,12 @@ function ModalRegister({ setIsOpenModal }) {
       </section>
       <form action="">
         {inputs.map((eachInput) => (
-          <div className='Input-Container' key={eachInput.id}>
-            <label className='Modal-Label Font-Five' htmlFor="">{eachInput.label}</label>
+          <div className='Input-Register' key={eachInput.id}>
+            <label className='Register-Label Font-Five' htmlFor="">{eachInput.label}</label>
             <input type={eachInput.type} />
           </div>
         ))}
-        <button className='Button-Modal Button-Purple-Submit'>Confirmar</button>
+        <button className='Button-Register Button-Purple-Submit'>Confirmar</button>
       </form>
       </section>
     </article>

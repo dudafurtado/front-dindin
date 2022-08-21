@@ -14,10 +14,10 @@
 }
 
 .EditProfile {
-    width: 540px;
-    height: 530px;
+    width: 500px;
+    height: 540px;
 
-    padding: 38px 58px;
+    padding: 34px 48px;
     background-color: var(--white-color);
     border-radius: 20px;
 }
@@ -27,7 +27,7 @@
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .Modal-Title {
@@ -44,7 +44,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 26px;
+    gap: 21px;
 }
 
 .Input-Container {
@@ -58,8 +58,9 @@
 .Input-Container input {
     all: unset;
 
-    height: 35px;
+    height: 40px;
     
+    padding: 0px 12px;
     border-radius: 5px;
     border: 1px solid #555555;
 }

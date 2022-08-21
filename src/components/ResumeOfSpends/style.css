@@ -1,16 +1,21 @@
 .SpendDetails {
-    position: relative;
-    top: 55px;
+    position: absolute;
+    top: 87px;
+    right: 80px;
 
     display: flex;
     flex-direction: column;
 }
 
 .SpendDetails-Container {
-    width: 225px;
-    height: 220px;
+    width: 240px;
+    height: 260px;
 
-    padding: 26px 33px 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 0px 35px;
     background: var(--white-background);
     box-shadow: 0px 2px 11px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -20,7 +25,7 @@
     font-size: 18px;
     line-height: 21px;
 
-    margin-bottom: 23px;
+    margin-bottom: 25px;
 }
 
 .Resume {
@@ -28,15 +33,18 @@
     line-height: 15px;
     border-bottom: 1px solid #EAEAEA;
 
-    margin-bottom: 16px;
+    margin-bottom: 18px;
 }
 
 .Resume-TopOne, .Resume-TopTwo, .Resume-Bottom {
     display: flex;
     justify-content: space-between;
-    align-items: center;
 
     margin-bottom: 12px;
+}
+
+.Resume-TopTwo {
+    margin-bottom: 21px;
 }
 
 .Resume-Bottom {

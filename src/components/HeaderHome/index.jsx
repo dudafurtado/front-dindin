@@ -22,7 +22,7 @@ function HeaderHome() {
 
   return (
     <header className="HeaderHome Font-Rubik">
-      {isOpenModal && <ModalEditProfile setIsOpenModal={setIsOpenModal} />}
+      {isOpenModal && <ModalEditProfile isOpenModal={isOpenModal} setIsOpenModal={setIsOpenModal} />}
         <div className='Left-HeaderHome'>
             <img src={LogoIcon} alt='Icone da logo da empresa Dindin'/>
             <h2 className='Font-Seven Dindin'>Dindin</h2>

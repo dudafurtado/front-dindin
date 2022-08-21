@@ -47,7 +47,6 @@ function CardComingIn({ title, input, button, isSignUp }) {
   }
 
   async function handleLogin () {
-    console.log(login)
     try {
       const response = await api.post('/login', {
         ...login
@@ -73,7 +72,7 @@ function CardComingIn({ title, input, button, isSignUp }) {
       const response = await api.post('/user', {
         ...signUp
       })
-      console.log(response);
+
       if (response.status > 204) return toast.error(response.data);
 
       toast.success('Vamos para o login confirmar sua conta. É para sua segurança, ok?');
@@ -86,7 +85,6 @@ function CardComingIn({ title, input, button, isSignUp }) {
   }
 
   function handleClearForm () {
-    console.log('limpar o form')
      if (isSignUp === true) {
       setSignUp({
         name: '',

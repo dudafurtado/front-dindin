@@ -22,14 +22,14 @@ createRoot(document.getElementById('root')).render(
       },
       icon: '👏',
       success: {
-        duration: 3000,
+        duration: 6000,
         style: {
-          background: 'var(--purple-button-color)'
+          background: 'var(--green-success-color)'
         },
         icon: '🔥',
       },
       error: {
-        duration: 3000,
+        duration: 6000,
         style: {
           background: 'var(--orange-money-color)'
         },

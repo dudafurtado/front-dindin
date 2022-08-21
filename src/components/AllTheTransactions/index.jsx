@@ -4,31 +4,32 @@ import TrashIcon from '../../assets/icon-trash.svg';
 
 import api from '../../services/api';
 import { getItem } from '../../utils/storage';
+
 import { useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
 
 function ResumeOfSpends() {
   const [transactions, setTransactions] = useState([]);
+  const token = getItem('token');
 
   async function loadTransactions() {
-    const token = getItem('token')
     try {
-      const response = await api.get('/transacao',
+      const response = await api.get('/transaction',
       {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
+
       setTransactions(response.data);
     } catch (error) {
-      console.log(error.message)
+      toast.error(error.response.data);
     }
   }
 
   async function deleteTransactions(IDbyTrans) {
-    const token = getItem('token')
     try {
-      await api.delete(`/transacao/${IDbyTrans}`,
-      {
+      await api.delete(`/transaction/${IDbyTrans}`, {
         headers: {
           Authorization: `Bearer ${token}`
         }
@@ -37,14 +38,16 @@ function ResumeOfSpends() {
       const localTransactions = [...transactions];
       const indexTrans = localTransactions.findIndex((trans) => trans.id === IDbyTrans);
       localTransactions.splice(1, indexTrans);
+      
       setTransactions(localTransactions);
     } catch (error) {
-      console.log(error)
+      toast.error(error.response.data);
     }
   }
 
   useEffect(() => {
     loadTransactions();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

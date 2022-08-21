@@ -1,5 +1,9 @@
 .ResumeOfSpends {
     width: 920px;
+
+    position: relative;
+    top: 320px;
+    right: 142px;
 }
 
 .TitleOfTransactions {

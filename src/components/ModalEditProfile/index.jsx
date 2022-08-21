@@ -1,25 +1,34 @@
 import './style.css';
 import CloseIcon from '../../assets/icon-close.svg';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
 import api from '../../services/api';
 import { getItem } from '../../utils/storage';
 
-function ModalEditProfile({ setIsOpenModal }) {
-  const inputs =[
+function ModalEditProfile({ isOpenModal, setIsOpenModal }) {
+  const [editProfile, setEditProfile] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const token = getItem('token');
+
+  let inputs =[
     {
       id: 1,
       label: 'Nome',
       type: 'text',
-      value: 'name'
+      value: editProfile.name
     },
     {
       id: 2,
       label: 'E-mail',
       type: 'email',
-      value: 'email'
+      value: editProfile.email
     },
     {
       id: 3,
@@ -35,32 +44,46 @@ function ModalEditProfile({ setIsOpenModal }) {
     },
   ]
 
-  const [editProfile, setEditProfile] = useState({
-    name: '',
-    email: '',
-    password: ''
-  });
+  async function loadUser () {
+    try {
+      const { data } = await api.get('/user', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+
+      setEditProfile({
+        name: data.name,
+        email: data.email
+      })
+    } catch (error) {
+      return toast.error(error.data);
+    }
+  }
 
   function handleChangeInputValue (addedValue, event) {
     const inputValue = event.target.value;
     setEditProfile({...editProfile, [addedValue]: inputValue});
   }
 
-  async function handleSubmit (e) {
+  function handleSubmit (e) {
     e.preventDefault();
 
-    if (!editProfile.name || !editProfile.email || !editProfile.password) {
-      return toast.error('Todos os campos são obrigatórios');
-    }
+    if (!editProfile.name || !editProfile.email) return toast.error('Altere o valor ou mantenha os dados anteriores');
+
+    if (!editProfile.password) return toast.error('Por questões de segurança, toda e qualquer alteração do usuário precisa da senha');
+
+    if (editProfile.password !== editProfile.confirmPassword) return toast.error('É necessário que as senhas coincidam');
     
     handleUpdateUser();
   }
 
   async function handleUpdateUser() {
-    const token = getItem('token');
     try {
       await api.put('/user', {
-        ...editProfile
+        name: editProfile.name,
+        email: editProfile.name,
+        password: editProfile.password
       },
       {
         headers: {
@@ -69,20 +92,15 @@ function ModalEditProfile({ setIsOpenModal }) {
       });
 
       toast.success('Seu perfil foi atualizado com sucesso');
-
-      handleClearForm();
     } catch (error) {
       toast.error(error.response.data);
     }
   }
 
-  function handleClearForm () {
-    setEditProfile({
-      name: '',
-      email: '',
-      password: ''
-    });
- }
+  useEffect(() => {
+    loadUser();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpenModal]);
 
   return (
     <article className="ModalEditProfile Font-Rubik">
@@ -97,7 +115,8 @@ function ModalEditProfile({ setIsOpenModal }) {
             <label className='Modal-Label Font-Five' htmlFor={eachInput.label}>{eachInput.label}</label>
             <input 
             id={eachInput.label} 
-            type={eachInput.type} 
+            type={eachInput.type}
+            value={eachInput.value}
             onChange={(event) => handleChangeInputValue(eachInput.value, event)}
             />
           </div>

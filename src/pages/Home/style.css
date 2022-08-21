@@ -6,9 +6,13 @@
     width: 100%;
     
     position: absolute;
-    top: 118px;
+    top: 106px;
 
-    padding: 55px 82px 100px 82px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 32px 0px 100px;
     background-color: var(--white-color);
     border-radius: 60px 60px 0px 0px;
 }
@@ -17,5 +21,5 @@
     display: flex;
     gap: 50px;
 
-    margin-bottom: 61px;
+    margin-bottom: 42px;
 }
