@@ -14,10 +14,10 @@
 }
 
 .Register {
-    width: 540px;
-    height: 580px;
+    width: 510px;
+    height: 560px;
 
-    padding: 38px 58px;
+    padding: 34px 48px;
     background-color: var(--white-color);
     border-radius: 20px;
 }
@@ -27,7 +27,7 @@
     justify-content: space-between;
     align-items: center;
 
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .Register-Title {
@@ -41,22 +41,24 @@
 
 .Type {
     display: flex;
-}
 
-.Entrance {
-    background-color: var(--blue-money-color);
-}
-
-.Exit {
-    background-color: var(--red-exit-color);
+    margin-bottom: 10px;
 }
 
 .Entrance, .Exit {
+    cursor: pointer;
+
     width: 50%;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 11px 47px 14px;
+    background-color: var(--light-gray-color);
+    border-radius: 5px;
+
+    color: var(--white-color);
 }
 
 .Register form {
@@ -64,9 +66,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 26px;
-
-    margin-top: 15px;
+    gap: 20px;
 }
 
 .Input-Register {
@@ -82,7 +82,7 @@
 
     height: 35px;
     
-    padding: 0px 24px;
+    padding: 0px 16px;
     border-radius: 5px;
     border: 1px solid #555555;
 }

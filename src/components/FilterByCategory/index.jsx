@@ -7,8 +7,7 @@ import { getItem } from '../../utils/storage';
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 
-function FilterByCategory() {
-    const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+function FilterByCategory({ isCategoriesOpen, setIsCategoriesOpen }) {
     const [categories, setCategories] = useState([]);
     const token = getItem('token')
 

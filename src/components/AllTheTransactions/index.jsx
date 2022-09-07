@@ -5,12 +5,19 @@ import TrashIcon from '../../assets/icon-trash.svg';
 import api from '../../services/api';
 import { getItem } from '../../utils/storage';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import toast from 'react-hot-toast';
 
-function ResumeOfSpends() {
+function ResumeOfSpends({ isCategoriesOpen }) {
   const [transactions, setTransactions] = useState([]);
+  const resumeRef = useRef(null);
   const token = getItem('token');
+
+  //if (isCategoriesOpen) {
+    //resumeRef.current.style.top = '320px'
+  //} else {
+    //resumeRef.current.style.top = '14px'
+  //}
 
   async function loadTransactions() {
     try {
@@ -51,7 +58,7 @@ function ResumeOfSpends() {
   }, []);
 
   return (
-    <article className="ResumeOfSpends">
+    <article ref={resumeRef} className="ResumeOfSpends">
         <section className='TitleOfTransactions Font-Lato Font-Seven'>
             <span>Data</span>
             <span>Dia da semana</span>

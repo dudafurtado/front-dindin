@@ -1,7 +1,12 @@
 import './style.css';
-import CloseIcon from '../../assets/icon-close.svg'
+import CloseIcon from '../../assets/icon-close.svg';
+
+import { useRef } from 'react';
 
 function ModalRegister({ setIsOpenModal }) {
+  const exitRef = useRef();
+  const entranceRef = useRef();
+
   const inputs =[
     {
       id: 1,
@@ -25,6 +30,19 @@ function ModalRegister({ setIsOpenModal }) {
     },
   ]
 
+  function typeClicked(type) {
+    console.log('um dos tipos foi tocado')
+    if (type === 'entrance') {
+      console.log('entrada selecionada')
+      entranceRef.current.style.background = 'var(--blue-money-color)';
+      exitRef.current.style.background = 'var(--light-gray-color)';
+    } else {
+      console.log('saída selecionada')
+      entranceRef.current.style.background = 'var(--light-gray-color)';
+      exitRef.current.style.background = 'var(--red-exit-color)';
+    }
+  }
+
   return (
     <article className="ModalRegister Font-Rubik">
       <section className="Register">
@@ -33,8 +51,8 @@ function ModalRegister({ setIsOpenModal }) {
           <img onClick={() => setIsOpenModal(false)} src={CloseIcon} className='CloseIcon' alt="Icone para fechar o modal" />
         </div>
         <section className='Type'>
-        <span className='Entrance Button-Purple-Submit'>Entrada</span>
-        <span className='Exit Button-Purple-Submit'>Saída</span>
+        <span ref={entranceRef} onClick={() => typeClicked('entrance')} className='Entrance'>Entrada</span>
+        <span ref={exitRef} onClick={() => typeClicked('exit')}  className='Exit'>Saída</span>
       </section>
       <form action="">
         {inputs.map((eachInput) => (
